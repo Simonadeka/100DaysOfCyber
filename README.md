@@ -30,7 +30,7 @@ Click any Day to jump 👇 Update `⬜` to `✅` as you go.
 | Day 10 | VNC Auth Bypass | ⬜ |
 | Day 11 | PostgreSQL Weak Creds | ⬜ |
 | Day 12 | MySQL Weak Creds | ⬜ |
-| Day 13 | Metasploitable2 - Blue Team IR Lab | vsftpd 2.3.4 Backdoor, Post-Exploit Forensics | [Link](./Day-13-Metasploitable2-IR/)  |
+| Day 13 | Metasploitable2 - Blue Team IR Lab | vsftpd 2.3.4 Backdoor, Post-Exploit Forensics | [Link](./Day-13-Metasploitable2-IR/) | ✅ |
 | Day 14 | Hydra SSH Bruteforce | ⬜ |
 | Day 15 | Hydra FTP Bruteforce | ⬜ |
 | Day 16 | Web App: DVWA Setup | ⬜ |
