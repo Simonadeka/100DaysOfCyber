@@ -16,20 +16,28 @@ If you can't break it, you can't protect it. This repo is proof of work for SOC/
 ## **Table of Progress**
 Click any Day to jump 👇 Update `⬜` to `✅` as you go.
 
-| Day | Vuln / Port / Topic | Status |
-| --- | --- | --- |
-| Day 1 | Lab Setup + Nmap Baseline | ✅ |
-| Day 2 | Service Enumeration | ✅ |
-| Day 3 | Anonymous FTP Access | ✅ |
-| Day 4 | Full Nmap Vuln Scan | ✅ |
-| Day 5 | TCP/1524 Bindshell RCE | ✅ |
-| Day 6 | vsftpd 2.3.4 Backdoor | ⬜ |
-| Day 7 | Samba usermap_script RCE | ⬜ |
-| Day 8 | UnrealIRCd Backdoor | ⬜ |
-| Day 9 | Distcc RCE | ⬜ |
-| Day 10 | VNC Auth Bypass | ⬜ |
-| Day 11 | PostgreSQL Weak Creds | ⬜ |
-| Day 12 | MySQL Weak Creds | ⬜ |
+| Day | Title | Skills | Link | Status |
+| --- | --- | --- | --- | --- |
+| Day 1 | Nmap Basics | Host Discovery, Port Scanning | [Link](./Day-1-Nmap/) | ✅ |
+| Day 2 | Hydra FTP Bruteforce | Weak Credential Attack | [Link](./Day-2-Hydra-FTP/) | ✅ |
+| Day 3 | SMB Share Enum | SMB Enumeration | [Link](./Day-3-SMB/) | ✅ |
+| Day 4 | SSH Bruteforce | Hydra, SSH | [Link](./Day-4-SSH/) | ✅ |
+| Day 5 | Web Dir Bruteforce | Gobuster, Dirb | [Link](./Day-5-Web-Dir/) | ✅ |
+| Day 6 | vsftpd 2.3.4 Backdoor | FTP Backdoor Exploit | [Link](./Day-6-vsftpd/) |  |
+| Day 7 | Samba usermap_script RCE | RCE Exploit | [Link](./Day-7-Samba/) |  |
+| Day 8 | UnrealIRCd Backdoor | IRC Backdoor | [Link](./Day-8-UnrealIRCd/) |  |
+| Day 9 | Distcc RCE | Distcc Exploit | [Link](./Day-9-Distcc/) |  |
+| Day 10 | VNC Auth Bypass | VNC Weak Auth | [Link](./Day-10-VNC/) |  |
+| Day 11 | PostgreSQL Weak Creds | DB Creds Bruteforce | [Link](./Day-11-Postgres/) |  |
+| Day 12 | MySQL Weak Creds | DB Creds Bruteforce | [Link](./Day-12-MySQL/) |  |
+| Day 13 | Metasploitable2 - Blue Team IR Lab | vsftpd 2.3.4 Backdoor, Post-Exploit Forensics | [Link](./Day-13-Metasploitable2-IR/) | ✅ |
+| Day 14 | Hydra SSH Bruteforce |  |  |  |
+| Day 15 | Hydra FTP Bruteforce |  |  |  |
+| Day 16 | Web App: DVWA Setup |  |  |  |
+| Day 17 | SQL Injection DVWA |  |  |  |
+| Day 18 | XSS Reflected DVWA |  |  |  |
+| Day 19 | File Upload DVWA |  |  |  |
+| Day 20 | Command Injection DVWA |  |  |  |
 | Day 13 | Metasploitable2 - Blue Team IR Lab | vsftpd 2.3.4 Backdoor, Post-Exploit Forensics | [Link](./Day-13-Metasploitable2-IR/) | ✅ |
 | Day 14 | Hydra SSH Bruteforce | ⬜ |
 | Day 15 | Hydra FTP Bruteforce | ⬜ |
