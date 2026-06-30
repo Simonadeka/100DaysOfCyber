@@ -121,31 +121,4 @@ Click any Day to jump 👇 Update `⬜` to `✅` as you go.
 
 ---
 
-### Day 13 - Metasploitable2 Blue Team IR Lab | 90-Day SOC Analyst
-**Target**: Metasploitable2 192.168.56.3  | **Date**: 2026-06-29
-**Role**: Blue Team Forensics Analyst | **Link**: [./Day-13-Metasploitable2-IR/](./Day-13-Metasploitable2-IR/)
 
-#### Executive Summary
-Gained root access to EOL Linux target via SSH with legacy crypto flags. Identified FTP brute-force T1595.003 and anti-forensic T1070.003 activity.
-
-#### Technical Findings - MITRE ATT&CK Mapped
-| Technique | ID | Evidence |
-| --- | --- | --- |
-| **Valid Accounts** | T1589.001 | `/home` contains: msfadmin, service, user, ftp, postgres, irc, tomcat55 |
-| **Active Scanning** | T1595.003 | `/var/log/vsftpd.log`: 15x CONNECT from 192.168.56.103 |
-| **Indicator Removal** | T1070.003 | `/root/.bash_history` is 0 bytes |
-
-#### Evidence
-![vsftpd logs showing brute-force attempts](./Day-13-Metasploitable2-IR/screenshots/day13_vsftpd_logs.png)
-![Empty bash history showing anti-forensics](./Day-13-Metasploitable2-IR/screenshots/day13_bash_history_empty.png)
-
-#### SOC Analyst Takeaways
-1.  **Legacy Assets = Risk**: EOL systems need deprecated crypto. Isolate them.
-2.  **Correlate Logs**: Bash history was wiped, but vsftpd.log exposed the attack.
-3.  **Host-Specific Flags**: Use `-o` flags per-host vs weakening global `~/.ssh/config`.
-
-### **Day 1: Lab Setup + Nmap Baseline**
-**Mindset:** You can’t attack what you can’t reach.
-**What:** Built lab. Kali IP: `192.168.56.2` Target IP: `192.168.56.3`
-```bash
-nmap -sn 192.168.56.0/24
