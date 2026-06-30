@@ -136,8 +136,8 @@ Gained root access to EOL Linux target via SSH with legacy crypto flags. Identif
 | **Indicator Removal** | T1070.003 | `/root/.bash_history` is 0 bytes |
 
 #### Evidence
-![vsftpd logs showing brute-force attempts](./Day-13-Metasploitable2-IR/day13_vsftpd_logs.jpg)
-![Empty bash history showing anti-forensics](./Day-13-Metasploitable2-IR/day13_bash_history_empty.jpg)
+![vsftpd logs showing brute-force attempts](./Day-13-Metasploitable2-IR/screenshots/day13_vsftpd_logs.png)
+![Empty bash history showing anti-forensics](./Day-13-Metasploitable2-IR/screenshots/day13_bash_history_empty.png)
 
 #### SOC Analyst Takeaways
 1.  **Legacy Assets = Risk**: EOL systems need deprecated crypto. Isolate them.
