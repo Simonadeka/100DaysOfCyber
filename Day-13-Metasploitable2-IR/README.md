@@ -28,7 +28,7 @@ Exploit a known-vulnerable service, then map artifacts an attacker leaves behind
 ![Home Directory Enumeration](./screenshots/day13-home-dir-enumeration.png)
 *Fig 5: Post-Exploit - Enumerating `/root`, `/home`, `/home/msfadmin` forensics*
 
-### Day 13 - Metasploitable2 Blue Team IR Lab | 90-Day SOC Analyst
+### Day 13 - Metasploitable2 Blue Team IR Lab | 100-Day SOC Analyst
 **Target**: Metasploitable2 192.168.56.3  | **Date**: 2026-06-29
 **Role**: Blue Team Forensics Analyst | **Link**: [Day 13 Write-up](./Day13-Metasploitable2-Blue-Team-IR.md)
 
