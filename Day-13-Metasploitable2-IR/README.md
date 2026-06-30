@@ -43,8 +43,8 @@ Gained root access to EOL Linux target via SSH with legacy crypto flags. Identif
 | **Indicator Removal** | T1070.003 | `/root/.bash_history` is 0 bytes |
 
 #### Evidence
-![vsftpd logs showing brute-force attempts](./Day-13-Metasploitable2-IR/screenshots/day13_vsftpd_logs.png)
-![Empty bash history showing anti-forensics](./Day-13-Metasploitable2-IR/screenshots/day13_bash_history_empty.png)
+![vsftpd logs showing brute-force attempts](./screenshots/day13_vsftpd_logs.png)
+![Empty bash history showing anti-forensics](./screenshots/day13_bash_history_empty.png)
 
 ### **Artifacts for Blue Team / DFIR**
 - **Initial Access:** Banner `vsftpd 2.3.4` on TCP/21
