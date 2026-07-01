@@ -72,16 +72,16 @@ _Fig 3: Blue Team - `1524/tcp DENY Anywhere` applied. Attack vector closed._
 nc 192.168.56.3 1524
 
 ![Day 12 Lockout](../screenshots/Day12-Lockout-Proof.png)
-_Fig 4: Validation - `Connection timed out`. Attack blocked , but remote access via that port is dead 
+*Fig 4: Validation - `Connection timed out`. Attack blocked, but remote access via 1524/tcp is dead*
 
-5. Lessons Learned
-1. *Scan ➜ Exploit ➜ Harden ➜ Validate*: This is the core cybersecurity loop.
-2. *Default Backdoors = RCE*: `1524/tcp bindshell` requires 0 auth. Critical risk in lab VMs.
-3. *Firewalls Mitigate Fast*: 1 command `ufw deny` fully mitigated T1190 via T1562.004.
-4. *Avoid Self-DoS*: Blocking your only access port without SSH/management IP = lock yourself out.
-*Fix*: Always `sudo ufw allow ssh` before `sudo ufw deny all`.
+## 5. Lessons Learned
+1.  **Scan → Exploit → Harden → Validate**: This is the core cybersecurity loop.
+2.  **Default Backdoors = RCE**: `1524/tcp bindshell` requires 0 auth. Critical risk in lab VMs.
+3.  **Firewalls Mitigate Fast**: 1 command `ufw deny` fully mitigated T1190 via T1562.004.
+4.  **Avoid Self-DoS**: Blocking your only access port without SSH/management IP = lock yourself out. 
+    **Fix**: Always `sudo ufw allow ssh` before `sudo ufw deny all`.
 
-6. MITRE ATT&CK Mapping
+## 6. MITRE ATT&CK Mapping
 
 Tactic Technique Technique ID Description
 **Initial Access** Exploit Public-Facing Application T1190 Exploited unauth bindshell on 1524/tcp
