@@ -88,7 +88,7 @@ Tactic Technique Technique ID Description
 **Defense Evasion** Impair Defenses: Firewall Rule T1562.004 Used `ufw deny` to block the port
 
 ## 7. References
-1.  Rapid7 Metasploitable2 ExploitabiT Guide: https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide/
+1.  Rapid7 Metasploit Guide: https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide/
 2.  MITRE ATT&CK T1190: https://attack.mitre.org/techniques/T1190/
 3.  MITRE ATT&CK T1562.004: https://attack.mitre.org/techniques/T1562/004/
 
