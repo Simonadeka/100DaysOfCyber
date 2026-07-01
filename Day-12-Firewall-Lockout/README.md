@@ -4,7 +4,6 @@
 **Target**: Metasploitable2 `192.168.56.3` 
 **Date**: 2026-06-28 
 **Challenge**: #100ayCybersecurityChallenge Day 12
-**Repo**: https://github.com/[your-username]/30DayCybersecurityChallenge
 
 ---
 
