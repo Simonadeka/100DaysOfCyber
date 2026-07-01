@@ -1,6 +1,6 @@
 # Day 12: Red Team vs Blue Team - Firewall Lockout
 
-**Metasploitable2** walkthrough covering **Reconnaissance, Exploitation, Hardening, and Validation** to achieve root access, then block the vector with UFW. This write-up includes step-by-step commands, tool usage, screenshots, and MITRE ATT&CK mapping. 🚀
+**Metasploitable2** walkthrough covering **Reconnaissance, Exploitation, Hardening, and Validation** to achieve root access, then block the vector with UFW. This write-up includes step-by-step commands, tool usage, screenshots, and MITRE ATT&CK mapping.
 
 **Target**: `192.168.56.3` | **Attacker**: Kali `192.168.56.4` | **Date**: 2026-06-28
 **Challenge**: #30DayCybersecurityChallenge Day 12
