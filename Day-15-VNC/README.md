@@ -8,7 +8,7 @@ No bruteforce. No exploits.
 **What I did:**
 1. `nmap -sV -p 5900 192.168.56.3` 
    → Found `5900/tcp open vnc VNC protocol 3.3`
-2. `vncviewer 192.168.56.3::a5900`
+2. `vncviewer 192.168.56.3::5900`
 3. Password: `password` 
    → Full root GUI: `root's X desktop (metasploitable:0)`
 
