@@ -30,7 +30,7 @@ No bruteforce. No exploits.
 4. **Firewall it**: Don't expose 5900 to LAN. Use SSH tunnel/VPN instead.
 
 ### Evidence
-![Day 15 VNC Root Access](../screenshots/Day17-VNC.png)
+![Day 15 VNC Root Access](../screenshots/Day15-VNC.png)
 *Caption: Authenticated as root via VNC with password: password*
 
 ---
