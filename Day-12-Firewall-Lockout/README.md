@@ -72,7 +72,7 @@ _Fig 3: Blue Team - `1524/tcp DENY Anywhere` applied. Attack vector closed._
 nc 192.168.56.3 1524
 
 ![Day 12 Lockout](../screenshots/Day12-Lockout-Proof.png)
-_Fig 4: Validation - `Connection timed out`. Attack blocked ✅, but remote access via that port is dead ❌_
+_Fig 4: Validation - `Connection timed out`. Attack blocked , but remote access via that port is dead 
 
 5. Lessons Learned
 1. *Scan ➜ Exploit ➜ Harden ➜ Validate*: This is the core cybersecurity loop.
@@ -87,23 +87,10 @@ Tactic Technique Technique ID Description
 **Initial Access** Exploit Public-Facing Application T1190 Exploited unauth bindshell on 1524/tcp
 **Defense Evasion** Impair Defenses: Firewall Rule T1562.004 Used `ufw deny` to block the port
 
-7. References
-1. Rapid7 Metasploitable2 Exploitability Guide: https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide/
-2. MITRE ATT&CK T1190: https://attack.mitre.org/techniques/T1190/
-3. MITRE ATT&CK T1562.004: https://attack.mitre.org/techniques/T1562/004/
+## 7. References
+1.  Rapid7 Metasploitable2 Exploitability Guide: https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide/
+2.  MITRE ATT&CK T1190: https://attack.mitre.org/techniques/T1190/
+3.  MITRE ATT&CK T1562.004: https://attack.mitre.org/techniques/T1562/004/
 
 ---
-*Tags*: #RedTeam #BlueTeam #SOC #UFW #Firewall #Metasploitable2 #Linux #EthicalHacking #LearningInPublic #30DayCybersecurityChallenge
-
-
----
-
-### **Folder Structure You Need**
-
-Day-12-Firewall-Lockout/
-├── http://README.md <-- paste the block above here
-└── screenshots/
-├── http://Day12-Attack-Recon.png
-├── http://Day12-Bindshell-Root.png
-├── http://Day12-UFW-Deny-1524.png
-└── http://Day12-Lockout-Proof.png
+**Tags**: #RedTeam #BlueTeam #SOC #UFW #Firewall #Metasploitable2 #Linux #EthicalHacking #LearningInPublic #30DayCybersecurityChallenge
