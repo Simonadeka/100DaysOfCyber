@@ -79,7 +79,7 @@ nc 192.168.56.3 1524
 2.  **Default Backdoors = RCE**: `1524/tcp bindshell` requires 0 auth. Critical risk in lab VMs.
 3.  **Firewalls Mitigate Fast**: 1 command `ufw deny` fully mitigated T1190 via T1562.004.
 4.  **Avoid Self-DoS**: Blocking your only access port without SSH/management IP = lock yourself out. 
-    **Fix**: Always `sudo ufw allow ssh` before `sudo ufw deny all`.
+FIX: Always `sudo ufw allow ssh` before `sudo ufw deny all`.
 
 ## 6. MITRE ATT&CK Mapping
 
