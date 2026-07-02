@@ -56,11 +56,11 @@ sudo nmap -p 21 192.168.56.3
 
 ---
 
-3. Lessons Learned & Blue Team Notes
-1. *EOL = Remove, Don't Patch*: `vsFTPd 2.3.4` has no vendor patch. The only compliant fix is to `stop` the service and remove the package.
-2. *Network Segmentation*: In production, legacy services like FTP should be on isolated VLANs with strict firewall rules.
-3. *Defense-in-Depth*: `nmap --script vuln` is critical. Version detection alone is not proof of exploitability.
-4. *Validation is Mandatory*: An IR workflow is incomplete without a post-remediation scan to prove containment.
+## 4. Lessons Learned & Blue Team Notes
+1.  **EOL = Remove, Don't Patch**: `vsFTPd 2.3.4` has no vendor patch. `CVE-2011-2523` is unfixable except by removing the package.
+2.  **Network Segmentation**: In production, legacy services like FTP should be on isolated VLANs with strict firewall rules.
+3.  **Defense-in-Depth**: `nmap --script vuln` is critical. Version detection alone is not proof of exploitability.
+4.  **Validation is Mandatory**: An IR workflow is incomplete without a post-remediation scan to prove containment.
 
-*Tools Used*: `Nmap`, `NSE vuln scripts`, `ufw`, `Metasploitable2`, `Kali Linux`
-*Category*: #VulnerabilityManagement #IncidentResponse #LinuxHardening #BlueTeam
+**Tools Used**: `Nmap`, `NSE vuln scripts`, `ufw`, `Metasploitable2`, `Kali Linux`  
+**Category**: #VulnerabilityManagement #IncidentResponse #LinuxHardening #BlueTeam #CVE-2011-2523
