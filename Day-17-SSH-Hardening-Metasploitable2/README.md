@@ -71,15 +71,14 @@ Establishing a connection using the configured host profile bypasses the passwor
 \$ ssh metasploitable
 msfadmin@metasploitable:~\$ 
 ```
-![Day17 SSH Success](./screenshots/Day17-ssh_success.png)
-
+![Day17 SSH Success](./Day17-ssh_success.png)
 ### Success: Password Authentication Blocked
 Attempting to force traditional password authentication is strictly dropped by the hardened server daemon:
 ```bash
 \$ ssh -o PasswordAuthentication=yes msfadmin@192.168.56.3
 Permission denied (publickey).
 ```
-![Day17 Password Blocked](./screenshots/Day17-password_blocked.png)
+![Day17 Password Blocked](./Day17-password_blocked.png)
 ---
 
 ##  Blue Team Impact Analysis
