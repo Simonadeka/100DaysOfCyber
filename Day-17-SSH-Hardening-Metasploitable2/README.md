@@ -1,4 +1,4 @@
-# Lab 2B: SSH Hardening — Blue Team Control
+# SSH Hardening — Blue Team Control
 
 ##  Objective
 Harden SSH on a legacy Metasploitable 2 target by disabling password authentication and enforcing public key authentication only, aligning with the **CIS Ubuntu Benchmark 5.2** standard.
@@ -71,7 +71,7 @@ Establishing a connection using the configured host profile bypasses the passwor
 \$ ssh metasploitable
 msfadmin@metasploitable:~\$ 
 ```
-![SSH Key Authentication Verification](assets/ssh_success.png)
+![SSH Key Authentication Verification](assets/Day17-ssh_success.png)
 
 ### Success: Password Authentication Blocked
 Attempting to force traditional password authentication is strictly dropped by the hardened server daemon:
@@ -79,7 +79,7 @@ Attempting to force traditional password authentication is strictly dropped by t
 \$ ssh -o PasswordAuthentication=yes msfadmin@192.168.56.3
 Permission denied (publickey).
 ```
-![Password Authentication Blocked Verification](assets/password_blocked.png)
+![Password Authentication Blocked Verification](assets/Day17-password_blocked.png)
 
 ---
 
