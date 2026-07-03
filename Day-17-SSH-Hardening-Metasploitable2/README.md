@@ -1,20 +1,20 @@
 # Lab 2B: SSH Hardening — Blue Team Control
 
-## 🎯 Objective
+##  Objective
 Harden SSH on a legacy Metasploitable 2 target by disabling password authentication and enforcing public key authentication only, aligning with the **CIS Ubuntu Benchmark 5.2** standard.
 
 > **Blue Team Purpose:** Implement and verify a CIS-aligned control that eliminates password-based SSH attacks, increases accountability, and provides auditable evidence of secure configuration.
 
 ---
 
-## 🛠️ Environment Configuration
+## Environment Configuration
 *   **Attacker/Operator Machine:** Kali Linux 2026.1 (`simon@kali`)
 *   **Target Machine:** Metasploitable 2 (`msfadmin@192.168.56.3`)
 *   **Target Service:** OpenSSH v4.7p1
 
 ---
 
-## 🚀 Implementation Steps
+##  Implementation Steps
 
 ### 1. Generate and Deploy SSH Key
 Execute the following commands on the **Kali Linux** operator machine to generate a 2048-bit RSA key pair and copy the public key to the target:
@@ -63,7 +63,7 @@ Host metasploitable
 
 ---
 
-## 🛡️ Verification & Evidence
+##  Verification & Evidence
 
 ### Success: Public Key Authentication Works
 Establishing a connection using the configured host profile bypasses the password prompt entirely:
@@ -83,7 +83,7 @@ Permission denied (publickey).
 
 ---
 
-## 📊 Blue Team Impact Analysis
+##  Blue Team Impact Analysis
 
 | Control | Mitigated Risk | Security Value |
 | :--- | :--- | :--- |
@@ -92,4 +92,4 @@ Permission denied (publickey).
 | **File Permission Hardening** | Privilege escalation, local key tampering. | Prevents local malicious actors or compromised service accounts from tampering with authorized keys. |
 | **Key-Only Access** | Log pollution, alert fatigue. | Enhances SIEM log fidelity. Auth logs capture explicit public key fingerprints, easing audit trails. |
 
-> 📌 **Key Takeaway:** This represents a foundational host-hardening control. Eliminating the password vector effectively neutralizes external entry attempts prior to deploying layer-two defensive tools like `fail2ban`, port knocking, or Multi-Factor Authentication (MFA).
+>  **Key Takeaway:** This represents a foundational host-hardening control. Eliminating the password vector effectively neutralizes external entry attempts prior to deploying layer-two defensive tools like `fail2ban`, port knocking, or Multi-Factor Authentication (MFA).
