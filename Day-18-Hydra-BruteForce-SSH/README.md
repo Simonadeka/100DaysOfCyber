@@ -27,7 +27,7 @@ Validate SSH hardening from Day 17 by testing it against a real brute-force atta
 - **Log monitoring** lets Blue Team detect and respond to brute-force attempts in real-time.
 
 ### Proof
-![Hydra Failed Against Hardened SSH](./../screenshots/day18-hydra-failed.png)
+![Hydra Failed Against Hardened SSH](./../screenshots/Day18-hydra-failed.png)
 *Screenshot: Hydra output showing all attempts failed against key-only SSH*
 
 ### TL;DR
