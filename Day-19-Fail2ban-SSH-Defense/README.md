@@ -17,15 +17,13 @@ Configure the sshd jail in `/etc/fail2ban/jail.local`:
 
 ![Jail Settings Configuration](../screenshots/Day19-jail-local-config.png)
 
-Config details:
-
-## Note
-Kali needed custom SSH config to connect to Metasploitable2:
-Host 192.168.56.3
-    Ciphers +aes128-cbc,aes256-cbc
-    MACs +hmac-md5,hmac-sha1
-    KexAlgorithms +diffie-hellman-group1-sha1
-    PubkeyAcceptedKeyTypes +ssh-rsa
+Config details:enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+findtime = 600
 
 ## Commands Used
 1. Installation & Configuration
