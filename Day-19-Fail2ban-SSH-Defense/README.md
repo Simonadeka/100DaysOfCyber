@@ -70,12 +70,3 @@ sudo fail2ban-client set sshd unbanip 192.168.56.103
 - Sub-technique: Password Guessing (T1110.001)
 - Mitigation: Account Use Policies (M1036) via fail2ban connection limits.
 
-## 📸 Lab Evidence & Screenshots
-!/screenshots/Day19-hydra-attack.png
-!/screenshots/Day19-fail2ban-status.png
-!/screenshots/Day19-iptables-rules.png
-```
-
-
-  
-```
