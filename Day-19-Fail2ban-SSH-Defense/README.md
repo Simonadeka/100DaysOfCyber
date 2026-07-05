@@ -17,6 +17,14 @@ This project focuses on the automated prevention of credential attacks. For an e
 • **IPS**: fail2ban
 • **Attack Tool**: Hydra
 
+## Note
+Kali needed custom SSH config to connect to Metasploitable2:
+Host 192.168.56.3
+    Ciphers +aes128-cbc,aes256-cbc
+    MACs +hmac-md5,hmac-sha1
+    KexAlgorithms +diffie-hellman-group1-sha1
+    PubkeyAcceptedKeyTypes +ssh-rsa
+
 ## Commands Used
 1. Installation & Configuration
 ```bash
@@ -40,6 +48,7 @@ maxretry = 3
 bantime = 600
 findtime = 600
 ```
+![Fail2ban Status Verification](../screenshots/Day19-fail2ban-status.png)
 
 3. Service Management & Attack Simulation
 ```
@@ -49,8 +58,9 @@ sudo systemctl restart fail2ban
 sudo systemctl enable fail2ban
 
 # Execute attack from Kali Linux machine
-hydra -l msfadmin -P rockyou.txt ssh://<Ubuntu-IP>
+hydra -l msfadmin -P rockyou.txt ssh://192.168.56.3
 ```
+![Hydra Attack Simulation](../screenshots/Day19-hydra-attack.png)
 
 4. Verification & Status Check
 ```
@@ -64,16 +74,17 @@ sudo fail2ban-client status sshd
 # View active kernel firewall rules blocking attacker
 sudo iptables -L -n -v
 ```
+![Fail2ban Status Verification](../screenshots/Day19-fail2ban-status.png)
 
 5. Defensive Admin Commands (Unbanning)
 ```
 bash
 # Unban a specific IP from sshd jail
-sudo fail2ban-client set sshd unbanip <Attacker-IP>
-
+sudo fail2ban-client set sshd unbanip 192.168.56.103
 # Unban IP from all active jails
-sudo fail2ban-client unban <Attacker-IP>
+sudo fail2ban-client set sshd unbanip 192.168.56.103
 ```
+![Netfilter/Iptables Ban Verification](../screenshots/Day19-iptables-rules.png)
 
 ##  MITRE ATT&CK Mapping
 - Tactic: Credential Access (TA0006)
