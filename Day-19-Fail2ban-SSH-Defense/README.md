@@ -1,21 +1,23 @@
-# Day 19: Fail2ban SSH Defense
+# Day 19: Fail2ban + iptables SSH Defense
 
-## Goal
-Implement automated defense against SSH brute-force attacks using fail2ban on Metaploitable 2
+## 1. Objective
+Harden SSH on Metasploitable2 using Fail2ban and iptables to automatically detect and ban brute-force attacks.
 
-## Project Context & Inspiration
-This project focuses on the automated prevention of credential attacks. For an excellent companion study on how these same attacks are monitored, visualized, and documented inside a Security Operations Center (SOC) using a SIEM, check out this repository: 🔗 [Splunk Brute Force Detection & Analysis by rutuja-late](https://github.com/rutuja-late/Splunk-Brute-Force-Detection)
+## 2. Tools & Environment
+- **Target**: Metasploitable2 `192.168.56.3`
+- **Attacker**: Kali Linux `192.168.56.103`
+- **Tools**: Fail2ban, iptables, Hydra, sshd
 
-## Objective
-1. Configure fail2ban to monitor and ban IPs after 3 failed SSH login attempts
-2. Simulate brute-force attack using Hydra from Kali Linux
-3. Verify IP ban with iptables and fail2ban-client
+### Prerequisites
+Kali needed custom SSH config to connect to Metasploitable2's old SSH:
+![Kali SSH Config](../screenshots/Day19-ssh-config-kali.png)
 
-## Tools & Environment
-• **Target**: Metaploitable 2
-• **Attacker**: Kali Linux
-• **IPS**: fail2ban
-• **Attack Tool**: Hydra
+## 3. Jail Settings
+Configure the sshd jail in `/etc/fail2ban/jail.local`:
+
+![Jail Settings Configuration](../screenshots/Day19-jail-local-config.png)
+
+Config details:
 
 ## Note
 Kali needed custom SSH config to connect to Metasploitable2:
