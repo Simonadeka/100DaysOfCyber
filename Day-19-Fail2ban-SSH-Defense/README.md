@@ -36,20 +36,6 @@ sudo apt update && sudo apt install fail2ban -y
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 ```
 
-2. Jail Settings
-Add or modify the following rules inside `/etc/fail2ban/jail.local`:
-```
-[sshd]
-enabled = true
-port = ssh
-filter = sshd
-logpath = /var/log/auth.log
-maxretry = 3
-bantime = 600
-findtime = 600
-```
-![Fail2ban Status Verification](../screenshots/Day19-fail2ban-status.png)
-
 3. Service Management & Attack Simulation
 ```
 bash
