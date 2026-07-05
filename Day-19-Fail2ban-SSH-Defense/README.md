@@ -12,7 +12,7 @@ This project focuses on the automated prevention of credential attacks. For an e
 3. Verify IP ban with iptables and fail2ban-client
 
 ## Tools & Environment
-• **Target**: Ubuntu Desktop 22.04
+• **Target**: Metaploitable 2
 • **Attacker**: Kali Linux
 • **IPS**: fail2ban
 • **Attack Tool**: Hydra
