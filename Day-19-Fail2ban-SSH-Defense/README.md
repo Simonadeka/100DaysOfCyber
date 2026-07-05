@@ -17,14 +17,6 @@ Configure the sshd jail in `/etc/fail2ban/jail.local`:
 
 ![Jail Settings Configuration](../screenshots/Day19-jail-local-config.png)
 
-Config details:enabled = true
-port = ssh
-filter = sshd
-logpath = /var/log/auth.log
-maxretry = 3
-bantime = 600
-findtime = 600
-
 ## Commands Used
 1. Installation & Configuration
 ```bash
