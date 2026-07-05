@@ -1,7 +1,7 @@
 # Day 19: Fail2ban SSH Defense
 
 ## Goal
-Implement automated defense against SSH brute-force attacks using fail2ban on Ubuntu Desktop.
+Implement automated defense against SSH brute-force attacks using fail2ban on Metaploitable 2
 
 ## Project Context & Inspiration
 This project focuses on the automated prevention of credential attacks. For an excellent companion study on how these same attacks are monitored, visualized, and documented inside a Security Operations Center (SOC) using a SIEM, check out this repository: 🔗 [Splunk Brute Force Detection & Analysis by rutuja-late](https://github.com/rutuja-late/Splunk-Brute-Force-Detection)
