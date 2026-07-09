@@ -31,7 +31,6 @@ Exploit Command Injection vulnerability in DVWA to achieve Remote Code Execution
 3. **Result**
    - Server responded with `www-data`, confirming RCE
    ![Command Injection Screenshot](../screenshots/Day-23-Command-Injection.png)
-
 ## Key Takeaway
 - Command Injection occurs when apps pass unsanitized input to OS commands
 - Use input validation, whitelisting, and least privilege to mitigate
