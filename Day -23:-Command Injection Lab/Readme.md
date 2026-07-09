@@ -20,15 +20,19 @@ Exploit Command Injection vulnerability in DVWA to achieve Remote Code Execution
 1. **Recon**
    - Scanned target with `nmap -sC -sV -oN dvwa_scan.txt 192.168.56.101`
    - Identified open ports: 22 (ssh), 80 (http), 443 (https)
+     ![Recon-Scan Screenshot](Day-23-Recon- Scan.png)
+     
 2. **Exploit**
    - Intercepted request to `http://192.168.56.101/dvwa/vulnerabilities/command/`
    - Modified `ip` parameter to `127.0.0.1; whoami`
    - Forwarded request via Burp Suite
+     ![Burp Intercept Screenshot](Day-23-Burp Intercept.png)
+     
 3. **Result**
    - Server responded with `www-data`, confirming RCE
 
 ## Screenshots
-![Burp Intercept Screenshot](<paste_your_screenshot_link_here>)
+![Command-Injectiont Screenshot](Day-23-Command-Injection.png)
 
 ## Key Takeaway
 - Command Injection occurs when apps pass unsanitized input to OS commands
