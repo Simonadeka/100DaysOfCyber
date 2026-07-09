@@ -1,4 +1,4 @@
-# 100DaysOfCyber - Day 23: Command Injection Lab
+## Day 23: Command Injection Lab
 
 ## Overview
 This is Day 23 of my #100DaysOfCyber journey, where I explore web application security and ethical hacking.
