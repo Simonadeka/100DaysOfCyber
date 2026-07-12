@@ -49,7 +49,7 @@ Results
 Result 1: Signature Detection
 Windows Defender + Edge SmartScreen blocked `shell.exe` on download.
 
-![Defender Block](screenshots/figure_15d_defender_block.png)
+![Defender Block](screenshots/Day24-defender_block.png)
 
 Result 2: AMSI + Threat Detection Logs
 `Get-MpThreatDetection` shows 2 detections:
@@ -58,7 +58,7 @@ Result 2: AMSI + Threat Detection Logs
 
 Get-MpThreatDetection
 
-![Threat Logs](screenshots/figure_15e_threat_logs.png)
+![Threat Logs](screenshots/Day24-threat-logs.png)
 
 Conclusion
 Basic payloads are caught instantly by modern Defender. Signature detection + AMSI + SmartScreen provide layered defense.
