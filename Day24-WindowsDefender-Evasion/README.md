@@ -58,7 +58,7 @@ Result 2: AMSI + Threat Detection Logs
 
 Get-MpThreatDetection
 
-![Threat Logs](/Day24-threat-logs.png)
+![Defender Block](../screenshots/Day24_threat_logs.png)
 
 Conclusion
 Basic payloads are caught instantly by modern Defender. Signature detection + AMSI + SmartScreen provide layered defense.
