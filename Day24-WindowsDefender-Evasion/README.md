@@ -65,6 +65,8 @@ Get-MpThreatDetection
 Conclusion
 Basic payloads are caught instantly by modern Defender. Signature detection + AMSI + SmartScreen provide layered defense.
 
+---
+
 Key Learnings
 - Signature-based AV still stops 90% of known payloads
 - AMSI inspects PowerShell in memory before execution
