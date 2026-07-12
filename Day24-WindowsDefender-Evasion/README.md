@@ -54,7 +54,7 @@ Windows Defender + Edge SmartScreen blocked `shell.exe` on download.
 ![Defender Block](../screenshots/Day24-defender_block.png)
 
 Result 2: AMSI + Threat Detection Logs
-`Get-MpThreatDetection` shows 2 detections:
+Get-MpThreatDetection` shows 2 detections:
 1. `certutil.exe` LOLBAS abuse
 2. Malicious PowerShell flagged by AMSI
 
@@ -62,16 +62,16 @@ Get-MpThreatDetection
 
 ![Defender Block](../screenshots/Day24_threat_logs.png)
 
-Conclusion
+## Conclusion
 Basic payloads are caught instantly by modern Defender. Signature detection + AMSI + SmartScreen provide layered defense.
 
 ---
 
-Key Learnings
+## Key Learnings
 - Signature-based AV still stops 90% of known payloads
 - AMSI inspects PowerShell in memory before execution
 - LOLBAS tools like certutil are monitored
 - Encoding alone is not enough to bypass modern EDR
 
-Disclaimer
+## Disclaimer
 This lab was conducted in an isolated VM environment for educational purposes only. Do not use these techniques on systems you do not own or have explicit permission to test.
