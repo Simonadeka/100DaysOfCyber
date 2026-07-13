@@ -37,22 +37,12 @@ chmod +x health_dashboard.sh
 # 3. View the dashboard
 firefox health_report.html📸 Dashboard Preview!dashboard_screenshot.png
 Green = UP / OPEN | Red = DOWN / CLOSED🧠 Key LearningBash scripting for real SOC automation tasksNetwork monitoring with ping and netcat ncGenerating dynamic HTML reports directly from shellThinking like an analyst: Automate repetitive work to save timeTime saved: 15 min manual work → 10 seconds automated📂 Fileshealth_dashboard.sh - The automation scripthealth_report.html - Generated dashboard⏭️ Next StepsAdd email alerts when a host goes DOWNAdd CPU/RAM/Disk checksSchedule with cron🛠️ Tech UsedBash, Linux, ping, netcat, HTML, cron#30DaysOfCybersecurity #SOC #Automationjavascript
-### **2. `health_dashboard.sh` (no changes)**
-
-#!/bin/bash
-DATE=$(date "+%Y-%m-%d %H:%M:%S")
-REPORT="health_report.html"
-
-echo "<h1>
 
 #!/bin/bash
 DATE=$(date "+%Y-%m-%d %H:%M:%S")
 REPORT="/home/simon/health_report.html"
 
-echo "<h1>
-
-## Cyber Lab Health Dashboard - 
-$DATE</h1>" > $REPORT
+echo "<h1>Cyber Lab Health Dashboard - $DATE</h1>" > $REPORT
 echo "<table border=1><tr><th>Host</th><th>IP</th><th>Status</th><th>SSH Port 22</th></tr>" >> $REPORT
 
 # Function to check host
@@ -78,8 +68,10 @@ check_host() {
   echo "<tr><td>$NAME</td><td>$IP</td><td>$STATUS</td><td>$SSH</td></tr>" >> $REPORT
 }
 
+
 ![ Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
+# Run checks for all hosts
 check_host 192.168.56.101 "Ubuntu"
 check_host 192.168.56.103 "Kali"
 check_host 192.168.56.104 "Windows"
