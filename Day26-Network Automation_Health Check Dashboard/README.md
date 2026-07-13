@@ -1,5 +1,5 @@
-# Day 28: Network Automation - Health Check Dashboard
-Part of my **30 Days of Cybersecurity** challenge
+#  Day 26 Network Automation - Health Check Dashboard
+Part of my 100 Days of Cybersecurity challenge
 
 ## 🎯 Objective
 Build a bash script that automates daily health checks across all VMs in my cyber lab.  
