@@ -11,7 +11,7 @@ Goal: Go from 15 minutes of manual checks to a 10-second automated HTML dashboar
 | Metasploitable 2 | 192.168.56.3 | Vulnerable Target |
 
 ## ⚙️ The Automation Script: `health_dashboard.sh`
-
+```bash
 #!/bin/bash
 DATE=$(date "+%Y-%m-%d %H:%M:%S")
 REPORT="/home/simon/health_report.html"
@@ -60,19 +60,19 @@ Paste the code above, then:
 
 chmod +x health_dashboard.sh
 
-![Make executable](screenshots/Day26_dashboard_screenshot.png)
+![ Network Automation](../screenshots/Day26_dashboard_screenshot.png)
 
 2. Run the health check
 
 ./health_dashboard.sh
 
-![Run script](screenshots/Day26_dashboard_screenshot.png)
+![ Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
 3. View the dashboard
 
 firefox /home/simon/health_report.html
 
-![Open dashboard](screenshots/Day26_dashboard_screenshot.png)
+![Open dashboard](screenshots/Day28_dashboard_screenshot.png)
 
 📸 Final Dashboard Preview
 ![ Network Automation](../screenshots/Day26_health_dashboard_Report.png)
