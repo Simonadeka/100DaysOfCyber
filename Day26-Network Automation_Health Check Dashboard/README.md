@@ -1,5 +1,5 @@
-## Network Automation - Health Check Dashboard
-Part of my **#100DaysOfCyber** challenge
+##Day 26/100. Network Automation - Health Check Dashboard
+Part of my #100DaysOfCyber challenge
 
 ## 🎯 Objective
 Build a bash script that automates daily health checks across all VMs in my cyber lab.
