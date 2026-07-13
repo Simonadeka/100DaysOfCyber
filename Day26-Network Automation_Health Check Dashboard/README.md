@@ -61,5 +61,7 @@ check_host 192.168.56.103 "Kali"
 check_host 192.168.56.104 "Windows"
 check_host 192.168.56.3 "Metasploitable"
 
+![ Network Automation](../screenshots/Day26_health_dashboard_Report.png)
+
 echo "</table>" >> $REPORT
 echo "Report generated: $REPORT"
