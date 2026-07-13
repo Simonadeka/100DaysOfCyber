@@ -20,7 +20,9 @@ The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dash
 
 ## 🚀 How to Run
 
-chmod +x health_dashboard.sh
+### 1. Make script executable
+```bash
+chmod +x health_dashboard.s
 ./health_dashboard.sh
 firefox health_report.html
 
