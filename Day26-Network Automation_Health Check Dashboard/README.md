@@ -6,7 +6,6 @@ Build a bash script that automates daily health checks across all VMs in my cybe
 The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dashboard.
 
 ## 🖥️ Lab Environment
-
 | Host | IP | Role |
 | --- | --- | --- |
 | Ubuntu Server | 192.168.56.101 | Target Server |
@@ -14,17 +13,16 @@ The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dash
 | Windows 10 | 192.168.56.104 | Target |
 | Metasploitable 2 | 192.168.56.3 | Vulnerable Target |
 
-All VMs running on VirtualBox with a Host-Only Network.
-
 ## ⚙️ What the Script Does
-The `health_dashboard.sh` script performs 3 main checks:
 1.  **Ping Check**: Verifies if each host is UP or DOWN
-2.  **Port Check**: Checks if SSH port 22 is OPEN on each host using `nc`
-3.  **HTML Report**: Generates a timestamped dashboard: `health_report.html` with color-coded status
-
-Bonus: The report can be scheduled with `cron` to run daily.
+2.  **Port Check**: Checks if SSH port 22 is OPEN using `nc`
+3.  **HTML Report**: Generates `health_report.html` with color-coded status
 
 ## 🚀 How to Run
+```bash
+chmod +x health_dashboard.sh
+./health_dashboard.sh
+firefox health_report.html
 
 # 1. Make script executable
 chmod +x health_dashboard.sh
