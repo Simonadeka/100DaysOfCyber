@@ -1,3 +1,6 @@
+## Network Automation - Health Check Dashboard
+Part of my **#100DaysOfCyber** challenge
+
 ## 🎯 Objective
 Build a bash script that automates daily health checks across all VMs in my cyber lab.
 Goal: Go from 15 minutes of manual checks to a 10-second automated HTML dashboard.
