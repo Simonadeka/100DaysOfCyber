@@ -59,6 +59,7 @@ nano health_dashboard.sh
 Paste the code above, then:
 
 chmod +x health_dashboard.sh
+```
 
 ![Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
@@ -83,6 +84,7 @@ _Green = UP / OPEN | Red = DOWN / CLOSED_
 - Network monitoring with `ping` and `netcat`
 - Generating dynamic HTML reports from shell
 - Automating repetitive analyst work
+```
 
 📂 Folder Structure
 
