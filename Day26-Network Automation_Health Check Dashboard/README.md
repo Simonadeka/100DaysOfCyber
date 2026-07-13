@@ -21,7 +21,7 @@ The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dash
 ## 🚀 How to Run
 
 ### 1. Make script executable
-```bash
+
 chmod +x health_dashboard.s
 ./health_dashboard.sh
 firefox health_report.html
@@ -53,6 +53,8 @@ check_host() {
   if nc -zv -w1 $IP 22 > /dev/null 2>&1; then SSH="OPEN"; else SSH="CLOSED"; fi
   echo "<tr><td>$NAME</td><td>$IP</td><td>$STATUS</td><td>$SSH</td></tr>" >> $REPORT
 }
+
+![ Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
 check_host 192.168.56.101 "Ubuntu"
 check_host 192.168.56.103 "Kali"
