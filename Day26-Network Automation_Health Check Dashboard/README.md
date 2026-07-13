@@ -19,7 +19,7 @@ The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dash
 3.  **HTML Report**: Generates `health_report.html` with color-coded status
 
 ## 🚀 How to Run
-```bash
+
 chmod +x health_dashboard.sh
 ./health_dashboard.sh
 firefox health_report.html
