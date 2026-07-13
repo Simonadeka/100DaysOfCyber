@@ -60,13 +60,13 @@ Paste the code above, then:
 
 chmod +x health_dashboard.sh
 
-![ Network Automation](../screenshots/Day26_dashboard_screenshot.png)
+![Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
 2. Run the health check
 
 ./health_dashboard.sh
 
-![ Network Automation](../screenshots/Day26_health_dashboard_script.png)
+![Open dashboard](../screenshots/Day28_dashboard_screenshot.png)
 
 3. View the dashboard
 
