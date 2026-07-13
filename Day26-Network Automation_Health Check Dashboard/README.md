@@ -43,14 +43,38 @@ Green = UP / OPEN | Red = DOWN / CLOSED🧠 Key LearningBash scripting for real 
 DATE=$(date "+%Y-%m-%d %H:%M:%S")
 REPORT="health_report.html"
 
-echo "<h1>Cyber Lab Health Dashboard - $DATE</h1>" > $REPORT
+echo "<h1>
+
+#!/bin/bash
+DATE=$(date "+%Y-%m-%d %H:%M:%S")
+REPORT="/home/simon/health_report.html"
+
+echo "<h1>
+
+## Cyber Lab Health Dashboard - 
+$DATE</h1>" > $REPORT
 echo "<table border=1><tr><th>Host</th><th>IP</th><th>Status</th><th>SSH Port 22</th></tr>" >> $REPORT
 
+# Function to check host
 check_host() {
   IP=$1
   NAME=$2
-  if ping -c 1 -W 1 $IP > /dev/null 2>&1; then STATUS="UP 🟢"; else STATUS="DOWN 🔴"; fi
-  if nc -zv -w1 $IP 22 > /dev/null 2>&1; then SSH="OPEN"; else SSH="CLOSED"; fi
+  
+  # Ping check
+  if ping -c 1 -W 1 "$IP" > /dev/null 2>&1; then 
+    STATUS="UP 🟢"
+  else 
+    STATUS="DOWN 🔴"
+  fi
+
+  # SSH Port check
+  if nc -zv -w1 "$IP" 22 > /dev/null 2>&1; then 
+    SSH="OPEN"
+  else 
+    SSH="CLOSED"
+  fi
+  
+  # Write row to HTML
   echo "<tr><td>$NAME</td><td>$IP</td><td>$STATUS</td><td>$SSH</td></tr>" >> $REPORT
 }
 
