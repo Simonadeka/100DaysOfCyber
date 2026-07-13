@@ -1,9 +1,6 @@
-#  Day 26 Network Automation - Health Check Dashboard
-Part of my 100 Days of Cybersecurity challenge
-
 ## 🎯 Objective
-Build a bash script that automates daily health checks across all VMs in my cyber lab.  
-The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dashboard.
+Build a bash script that automates daily health checks across all VMs in my cyber lab.
+Goal: Go from 15 minutes of manual checks to a 10-second automated HTML dashboard.
 
 ## 🖥️ Lab Environment
 | Host | IP | Role |
@@ -13,30 +10,7 @@ The goal: Go from 15 minutes of manual checks to a 10-second automated HTML dash
 | Windows 10 | 192.168.56.104 | Target |
 | Metasploitable 2 | 192.168.56.3 | Vulnerable Target |
 
-## ⚙️ What the Script Does
-1.  **Ping Check**: Verifies if each host is UP or DOWN
-2.  **Port Check**: Checks if SSH port 22 is OPEN using `nc`
-3.  **HTML Report**: Generates `health_report.html` with color-coded status
-
-## 🚀 How to Run
-
-### 1. Make script executable
-
-chmod +x health_dashboard.s
-./health_dashboard.sh
-firefox health_report.html
-
-![ Network Automation](../screenshots/Day26_dashboard_screenshot.png)
-
-# 1. Make script executable
-chmod +x health_dashboard.sh
-
-# 2. Run the health check
-./health_dashboard.sh
-
-# 3. View the dashboard
-firefox health_report.html📸 Dashboard Preview!dashboard_screenshot.png
-Green = UP / OPEN | Red = DOWN / CLOSED🧠 Key LearningBash scripting for real SOC automation tasksNetwork monitoring with ping and netcat ncGenerating dynamic HTML reports directly from shellThinking like an analyst: Automate repetitive work to save timeTime saved: 15 min manual work → 10 seconds automated📂 Fileshealth_dashboard.sh - The automation scripthealth_report.html - Generated dashboard⏭️ Next StepsAdd email alerts when a host goes DOWNAdd CPU/RAM/Disk checksSchedule with cron🛠️ Tech UsedBash, Linux, ping, netcat, HTML, cron#30DaysOfCybersecurity #SOC #Automationjavascript
+## ⚙️ The Automation Script: `health_dashboard.sh`
 
 #!/bin/bash
 DATE=$(date "+%Y-%m-%d %H:%M:%S")
@@ -47,29 +21,26 @@ echo "<table border=1><tr><th>Host</th><th>IP</th><th>Status</th><th>SSH Port 22
 
 # Function to check host
 check_host() {
-  IP=$1
-  NAME=$2
-  
-  # Ping check
-  if ping -c 1 -W 1 "$IP" > /dev/null 2>&1; then 
-    STATUS="UP 🟢"
-  else 
-    STATUS="DOWN 🔴"
-  fi
+IP=$1
+NAME=$2
 
-  # SSH Port check
-  if nc -zv -w1 "$IP" 22 > /dev/null 2>&1; then 
-    SSH="OPEN"
-  else 
-    SSH="CLOSED"
-  fi
-  
-  # Write row to HTML
-  echo "<tr><td>$NAME</td><td>$IP</td><td>$STATUS</td><td>$SSH</td></tr>" >> $REPORT
+# Ping check
+if ping -c 1 -W 1 "$IP" > /dev/null 2>&1; then
+STATUS="UP 🟢"
+else
+STATUS="DOWN 🔴"
+fi
+
+# SSH Port check
+if nc -zv -w1 "$IP" 22 > /dev/null 2>&1; then
+SSH="OPEN"
+else
+SSH="CLOSED"
+fi
+
+# Write row to HTML
+echo "<tr><td>$NAME</td><td>$IP</td><td>$STATUS</td><td>$SSH</td></tr>" >> $REPORT
 }
-
-
-![ Network Automation](../screenshots/Day26_health_dashboard_script.png)
 
 # Run checks for all hosts
 check_host 192.168.56.101 "Ubuntu"
@@ -77,7 +48,53 @@ check_host 192.168.56.103 "Kali"
 check_host 192.168.56.104 "Windows"
 check_host 192.168.56.3 "Metasploitable"
 
-![ Network Automation](../screenshots/Day26_health_dashboard_Report.png)
-
 echo "</table>" >> $REPORT
 echo "Report generated: $REPORT"
+
+🚀 How to Run
+1. Create the script and make it executable
+
+nano health_dashboard.sh
+
+Paste the code above, then:
+
+chmod +x health_dashboard.sh
+
+![Make executable](screenshots/Day26_dashboard_screenshot.png)
+
+2. Run the health check
+
+./health_dashboard.sh
+
+![Run script](screenshots/Day26_dashboard_screenshot.png)
+
+3. View the dashboard
+
+firefox /home/simon/health_report.html
+
+![Open dashboard](screenshots/Day26_dashboard_screenshot.png)
+
+📸 Final Dashboard Preview
+![ Network Automation](../screenshots/Day26_health_dashboard_Report.png)
+_Green = UP / OPEN | Red = DOWN / CLOSED_
+
+🧠 Key Learning
+- Bash scripting for SOC automation
+- Network monitoring with `ping` and `netcat`
+- Generating dynamic HTML reports from shell
+- Automating repetitive analyst work
+
+📂 Folder Structure
+
+100DaysOfCyber/
+├── screenshots/
+│ └── Day28_dashboard_screenshot.png
+└── Day28/
+├── health_dashboard.sh
+├── health_report.html
+└── README.md
+
+🛠️ Tech Used
+`Bash` `Linux` `ping` `netcat` `HTML`
+
+#100DaysOfCyber #SOC #Automation #Bash
