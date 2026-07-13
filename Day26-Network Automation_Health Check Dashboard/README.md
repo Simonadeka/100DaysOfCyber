@@ -24,7 +24,7 @@ chmod +x health_dashboard.sh
 ./health_dashboard.sh
 firefox health_report.html
 
-![ Network Automation](../screenshots/Day26_dashboard_screenshot)
+![ Network Automation](../screenshots/Day26_dashboard_screenshot.png)
 
 # 1. Make script executable
 chmod +x health_dashboard.sh
