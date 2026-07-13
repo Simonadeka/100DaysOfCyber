@@ -67,13 +67,12 @@ chmod +x health_dashboard.sh
 
 ./health_dashboard.sh
 
-![Open dashboard](../screenshots/Day26_dashboard_screenshott.png)
+![Network Automation](../screenshots/Day26_dashboard_screenshot.png)
 
 3. View the dashboard
 
 firefox /home/simon/health_report.html
 
-![Open dashboard](screenshots/Day26_dashboard_screenshot.png)
 
 📸 Final Dashboard Preview
 ![ Network Automation](../screenshots/Day26_health_dashboard_Report.png)
