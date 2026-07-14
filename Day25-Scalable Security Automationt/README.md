@@ -36,7 +36,7 @@ do
 done
 echo "Report saved: port_report_$DATE.txt"
 
-*Screenshot*: !screenshots/port_report.png
+![Security_Automation](../screenshots/Day25_port_report.png)
 
 ### 2. Parse Auth Logs for Failed Logins
 Used a Python script to parse /var/log/auth.log for brute force attempts.
@@ -58,7 +58,7 @@ for ip, count in counts.most_common(5):
 if counts:
   print("\n[ALERT] Possible brute force detected")
 
-*Screenshot*: !screenshots/failed_logins.png
+![Security_Automation](../screenshots/Day25_failed_login.png)
 
 ## 🔑 Key Learnings
 1. *Automation improves efficiency*: Turns a 2-hour manual job into a 30-second cron job.
@@ -76,10 +76,4 @@ This was performed in a controlled lab environment. Do not use these techniques 
 Connect with me on https://www.linkedin.com/in/simon-adeka/
 
 
-Make sure to add the following screenshots to the `screenshots` folder:
-- `port_report.png`: Output of the port scan report
-- `failed_logins.png`: Output of the failed login attempts
-- `auth_log.png`: Screenshot of the /var/log/auth.log file showing failed login attempts
 
-Want me to draft Day 28: "What I would change if I had to build an enterprise SOC tomorrow" with a blueprint diagram + tool stack?
-```
