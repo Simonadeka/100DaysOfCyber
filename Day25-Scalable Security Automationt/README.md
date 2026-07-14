@@ -1,5 +1,5 @@
 
-# Day27-Automation in Cybersecurity: Making security scalable
+# Day25-Automation in Cybersecurity: Making security scalable
 
 ## 🎯 Objective
 Automate security tasks to improve efficiency and scalability in a SOC environment.
