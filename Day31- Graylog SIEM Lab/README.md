@@ -40,17 +40,18 @@ docker compose up -d
 3. `System > Inputs > Launch new input > Syslog TCP`
 4. *Port*: `1514` | *Bind address*: `0.0.0.0`
 
-3. Configure Kali to Forward Logs
-
+### 3. Configure Kali to Forward Logs
+```bash
 sudo apt install rsyslog -y
-echo '*.* @@<GRAYLOG_IP>:1514;RSYSLOG_SyslogProtocol23Format' | sudo tee /etc/rsyslog.d/10-graylog.conf
+echo '*.* @@192.168.56.101:1514;RSYSLOG_SyslogProtocol23Format' | sudo tee /etc/rsyslog.d/10-graylog.conf
 sudo systemctl restart rsyslog
+```
 
-4. Test Log Forwarding
-
-logger -n <GRAYLOG_IP> -P 1514 -T "Test log from Kali"
+### 4. Test Log Forwarding
+```bash
+logger -n 192.168.56.101 -P 1514 -T "Test log from Kali"
 sudo ls /root
-
+```
 Then check `Graylog > Search` for incoming logs.
 
 ---
