@@ -70,47 +70,47 @@ Then check `Graylog > Search` for incoming logs.
 ![ Graylog-SIEM Lab](../screenshots/Day31-logs-in-graylog.png)
 *Graylog parsing and indexing Kali system logs*
 ---
-### **3. Copy this `docker-compose.yml`**
-
+### 3. Copy this `docker-compose.yml`
+```yaml
 version: '3'
 services:
-mongo:
-image: mongo:6.0
-volumes:
-- mongo_data:/data/db
+  mongo:
+    image: mongo:6.0
+    volumes:
+      - mongo_data:/data/db
 
-opensearch:
-image: opensearchproject/opensearch:2.11.1
-environment:
-- discovery.type=single-node
-- "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
-ulimits:
-memlock:
-soft: -1
-hard: -1
-volumes:
-- opensearch_data:/usr/share/opensearch/data
+  opensearch:
+    image: opensearchproject/opensearch:2.11.1
+    environment:
+      - discovery.type=single-node
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
 
-graylog:
-image: graylog/graylog:5.2
-environment:
-- GRAYLOG_PASSWORD_SECRET=somepasswordpepper
-- GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-- GRAYLOG_HTTP_EXTERNAL_URI=http://localhost:9000/
-depends_on:
-- mongo
-- opensearch
-ports:
-- "9000:9000"
-- "1514:1514/tcp"
-volumes:
-- graylog_data:/usr/share/graylog/data
+  graylog:
+    image: graylog/graylog:5.2
+    environment:
+      - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
+      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://localhost:9000/
+    depends_on:
+      - mongo
+      - opensearch
+    ports:
+      - "9000:9000"
+      - "1514:1514/tcp"
+    volumes:
+      - graylog_data:/usr/share/graylog/data
 
 volumes:
-mongo_data:
-opensearch_data:
-graylog_data:
-
+  mongo_data:
+  opensearch_data:
+  graylog_data:
+```
 📚 What I Learned
 - Deploying enterprise SIEM tools in a containerized environment
 - Configuring rsyslog for remote TCP syslog forwarding
