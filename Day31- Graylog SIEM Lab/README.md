@@ -58,15 +58,15 @@ Then check `Graylog > Search` for incoming logs.
 ## 📸 Screenshots
 
 ### 1. Graylog Dashboard
-![Graylog Dashboard](screenshots/Day31-graylog-dashboard.png)
+![ Graylog-SIEM Lab](../screenshots/Day31-graylog-dashboard.png)
 *Real-time capture of sudo session opened/closed events*
 
 ### 2. Kali rsyslog Configuration  
-![Kali rsyslog Config](screenshots/Day31-kali-rsyslog-config.png)
+![ Graylog-SIEM Lab](../screenshots/Day31-kali-rsyslog-config.png)
 *rsyslog forwarding all logs to Graylog server*
 
 ### 3. Logs in Graylog Search
-![Logs in Graylog](screenshots/Day31-logs-in-graylog.png)
+![ Graylog-SIEM Lab](../screenshots/Day31-logs-in-graylog.png)
 *Graylog parsing and indexing Kali system logs*
 ---
 
