@@ -124,7 +124,7 @@ graylog_data:
 
 👤 Author
 *Simon Friday Adeka*
-Cybersecurity Student | SOC Analyst in Training
+Cybersecurity & Digital Forensics Intern | SOC Analyst in Training
 https://github.com/Simonadeka | https://www.linkedin.com/in/simon-adeka/
 
 📄 License
