@@ -69,28 +69,6 @@ Then check `Graylog > Search` for incoming logs.
 ![ Graylog-SIEM Lab](../screenshots/Day31-logs-in-graylog.png)
 *Graylog parsing and indexing Kali system logs*
 ---
-
-📚 What I Learned
-- Deploying enterprise SIEM tools in a containerized environment
-- Configuring rsyslog for remote TCP syslog forwarding
-- Troubleshooting Docker networking: NAT vs Bridged vs Host-Only
-- Log parsing, stream routing, and basic SOC monitoring workflows
-
-🔮 Future Improvements
-- [ ] Add TLS encryption for syslog traffic
-- [ ] Create Graylog Alerts for failed SSH logins
-- [ ] Integrate with Wazuh for IDS/IPS correlation
-- [ ] Forward logs from Windows and other Linux VMs
-
-👤 Author
-*Simon Adeka*
-Cybersecurity Student | SOC Analyst in Training
-https://github.com/Simonadeka | https://www.linkedin.com/in/simon-adeka/
-
-📄 License
-MIT License
-
-
 ### **3. Copy this `docker-compose.yml`**
 
 version: '3'
@@ -131,3 +109,25 @@ volumes:
 mongo_data:
 opensearch_data:
 graylog_data:
+
+📚 What I Learned
+- Deploying enterprise SIEM tools in a containerized environment
+- Configuring rsyslog for remote TCP syslog forwarding
+- Troubleshooting Docker networking: NAT vs Bridged vs Host-Only
+- Log parsing, stream routing, and basic SOC monitoring workflows
+
+🔮 Future Improvements
+- [ ] Add TLS encryption for syslog traffic
+- [ ] Create Graylog Alerts for failed SSH logins
+- [ ] Integrate with Wazuh for IDS/IPS correlation
+- [ ] Forward logs from Windows and other Linux VMs
+
+👤 Author
+*Simon Friday Adeka*
+Cybersecurity Student | SOC Analyst in Training
+https://github.com/Simonadeka | https://www.linkedin.com/in/simon-adeka/
+
+📄 License
+MIT License
+
+
