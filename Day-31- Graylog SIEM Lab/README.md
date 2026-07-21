@@ -22,25 +22,35 @@ This lab simulates a real-world SOC environment where system logs from Kali Linu
 - [x] Supports multiple network modes: NAT, Bridged, Host-Only
 
 ## 🏗️ Architecture[Kali Linux] --rsyslog--> [Docker Network] --> [Graylog:9000]
-|
--->
---> [OpenSearch][MongoDB]javascript
+                                   |
+                                   -->[OpenSearch]javascript
 ## 🚀 Setup Instructions
-### 1. Clone and Start Graylog with Docker
 
+### 1. Clone and Start Graylog with Docker
+```bash
 git clone https://github.com/Simonadeka/graylog-siem-lab
 cd graylog-siem-lab
-docker compose up -d2. Configure Graylog InputGo to http://localhost:9000Login: admin / adminSystem > Inputs > Launch new input > Syslog TCPPort: 1514, Bind address: 0.0.0.03. Configure Kali to Forward Logsjavascriptbash
-sudo apt install rsyslog -y
+docker compose up -d2. Configure Graylog Input
+Go to http://localhost:9000Login: admin / adminSystem > Inputs > Launch new input > Syslog TCPPort: 1514, Bind address: 0.0.0.03. Configure Kali to Forward Logsbashsudo apt install rsyslog -y
 echo '*.* @@<GRAYLOG_IP>:1514;RSYSLOG_SyslogProtocol23Format' | sudo tee /etc/rsyslog.d/10-graylog.conf
-sudo systemctl restart rsyslog4. Testjavascriptbash
-logger -n <GRAYLOG_IP> -P 1514 -T "Test log from Kali"
-sudo ls /rootCheck logs in Graylog > Search📸 Screenshots!screenshots/graylog-dashboard.png
-Real-time capture of sudo authentication events from Kali📚 What I LearnedDeploying enterprise SIEM tools in a containerized environmentConfiguring rsyslog for remote log forwardingTroubleshooting Docker networking: NAT vs Bridged vs Host-OnlyLog parsing, stream routing, and basic SOC monitoring workflows🔮 Future ImprovementsAdd TLS encryption for syslog trafficCreate Graylog Dashboards and Alerts for failed SSH loginsIntegrate with Wazuh for IDS/IPS correlationForward logs from Windows and other Linux VMs👤 AuthorSimon Adeka
+sudo systemctl restart rsyslog4. Testbashlogger -n <GRAYLOG_IP> -P 1514 -T "Test log from Kali"
+sudo ls /rootCheck logs in Graylog > Search📸 Screenshots
+Part of this response isn't supported on this device yet. View the full response on your phone.
+📚 What I Learned
+Deploying enterprise SIEM tools in a containerized environmentConfiguring rsyslog for remote log forwardingTroubleshooting Docker networking: NAT vs Bridged vs Host-OnlyLog parsing, stream routing, and basic SOC monitoring workflows🔮 Future Improvements
+Add TLS encryption for syslog trafficCreate Graylog Dashboards and Alerts for failed SSH loginsIntegrate with Wazuh for IDS/IPS correlationForward logs from Windows and other Linux VMs👤 Author
+Simon Adeka
 Cybersecurity Student | SOC Analyst in Training
-https://github.com/Simonadeka | https://www.linkedin.com/in/simon-adeka/📄 LicenseThis project is licensed under the MIT License.javascript
-And here's the `docker-compose.yml`:
-``
+GitHub | LinkedIn📄 License
+This project is licensed under the MIT License.javascript
+### **Key fixes I made:**
+1. Added blank lines between sections - GitHub needs that
+2. Wrapped all commands in `bash code blocks`
+3. Used proper bullet lists with `-`
+4. Added `2 spaces` at end of line for image caption to go on new line
+
+### **Also include this `docker-compose.yml`:**
+```yml
 version: '3'
 services:
   mongo:
