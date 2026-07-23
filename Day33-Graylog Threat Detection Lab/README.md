@@ -41,7 +41,7 @@ Most people use Kali Linux strictly for offensive testing. This repository flips
 Ensure your Kali instance is sending auth and system logs to your Graylog server. If using native `rsyslog`, append the following to `/etc/rsyslog.conf`:
 
 ```bash
-*.* @[YOUR_GRAYLOG_IP]:5140
+*.* @192.168.56.103:5140
 ```
 *Note: Replace with `@@` if using TCP.*
 
