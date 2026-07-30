@@ -33,8 +33,5 @@ Most email leaks happen because SMTP sends creds in Base64 and `STARTTLS` isn’
 - [LinkedIn Post](https://www.linkedin.com/your-post-url)
 - [Report](reports/day37-smtp-report.md)
 
-## 📝 **Next Up**
-- Day 38: DNS Tunneling Analysis
-- Want me to dissect DNS, HTTP creds, or SMB?
 
 #CyberSecurity #DFIR #ThreatHunting #Wireshark #KaliLinux
