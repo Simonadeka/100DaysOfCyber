@@ -1,40 +1,40 @@
-# 100 Days Of Cybersecurity 🚀
-
-My journey building real-world SOC/Blue Team skills through hands-on labs, tools, and write-ups.
+Day 37: SMTP Traffic Forensics in Kali VM
 
 ## 📚 **Challenge Overview**
-- **Goal**: Level up in DFIR, Threat Hunting, and Packet Analysis.
-- **Tools**: Kali Linux, Wireshark, tshark, tcpdump.
-- **Format**: 1 lab/day → Report + LinkedIn post + GitHub write-up.
+- **Objective**: Analyze SMTP traffic in a pcap, extract email headers, and identify security risks.
+- **Tools**: Kali Linux, Wireshark, tshark, grep.
+- **Challenge**: Reconstruct SMTP conversation, verify auth methods, and check for plaintext creds.
 
-## 🔍 **Labs & Write-Ups**
+## 🔍 **What I Did**
+1. Verified pcap integrity with `sha256sum` and `capinfos`.
+2. Filtered SMTP traffic using `tshark -Y "smtp"`.
+3. Rebuilt TCP stream with `tshark -z follow,tcp,ascii,0`.
+4. Extracted headers with `grep -Ei '^(From|To|Subject)'`.
 
-| Day | Topic | Tools Used | Screenshot | Write-Up | LinkedIn Post |
-|-----|-------|------------|------------|----------|--------------|
-| 1 | SMTP Traffic Forensics | Wireshark, tshark | ![SMTP Flow](images/smtp-flow.png) | [Report](reports/day1-smtp-report.md) | [Post](https://www.linkedin.com/your-post-url) |
+## 📈 **Findings & Results**
+- **SMTP Handshake**: `220 → EHLO → 250-AUTH LOGIN PLAIN → STARTTLS advertised`
+- **Auth Method**: LOGIN (Base64 encoded)
+- **Security Risk**: STARTTLS optional → creds sent in plaintext if sniffed.
+- **Headers**: Extracted sender, recipient, subject, and client info.
 
-## 🛠️ **Tools & Commands Cheat Sheet**
-- `tshark -r file.pcap -Y "smtp"`: Filter SMTP traffic
-- `tshark -z follow,tcp,ascii,0`: Reconstruct TCP stream
-- `grep -Ei '^(From|To|Subject)'`: Extract email headers
+## 🛠️ **Commands Used**
+- `tshark -r smtp.pcap -Y "smtp"`
+- `tshark -z follow,tcp,ascii,0`
+- `grep -Ei '^(From|To|Subject)' smtp.txt`
 
 ## 📸 **Screenshots**
-![SMTP Reconstruction](images/smtp-flow.png)
-*Day 1: Reconstructed SMTP Conversation*
+![SMTP Stream](images/day37-smtp-stream.png)
+*Reconstructed SMTP Conversation*
 
-## 📈 **Progress Tracker**
-- [x] Day 1: SMTP Forensics
-- [ ] Day 2: DNS Tunneling
-- [ ] Day 3: HTTP Creds in PCAP
+## 💡 **Takeaway**
+Most email leaks happen because SMTP sends creds in Base64 and `STARTTLS` isn’t enforced. If you can capture it, you can read it.
 
-## 💬 **Connect With Me**
-- [LinkedIn](https://www.linkedin.com/in/yourprofile/)
-- [Twitter](https://twitter.com/yourhandle)
+## 🔗 **Links**
+- [LinkedIn Post](https://www.linkedin.com/your-post-url)
+- [Report](reports/day37-smtp-report.md)
 
-## 🔖 **Resources I Use**
-- [TCPDump & Wireshark Cookbook](https://www.wireshark.org/docs/)
-- [Kali Linux Docs](https://www.kali.org/docs/)
-- [SANS DFIR](https://www.sans.org/cfwi/)
+## 📝 **Next Up**
+- Day 38: DNS Tunneling Analysis
+- Want me to dissect DNS, HTTP creds, or SMB?
 
-## 📝 **License**
-MIT License - Do whatever you want with these notes 😄
+#CyberSecurity #DFIR #ThreatHunting #Wireshark #KaliLinux
