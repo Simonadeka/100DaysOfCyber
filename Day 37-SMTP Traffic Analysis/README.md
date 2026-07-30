@@ -1,4 +1,4 @@
-Day 37: SMTP Traffic Forensics in Kali VM
+# Day 37: SMTP Traffic Forensics in Kali VM# 
 
 ## 📚 **Challenge Overview**
 - **Objective**: Analyze SMTP traffic in a pcap, extract email headers, and identify security risks.
