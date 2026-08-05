@@ -111,7 +111,3 @@ Place your 7 screenshots in this folder with names matching the README:
 - `6_js_global_vars.png`
 - `7_network_requests.png`
 
-This repo structure is ready for GitHub upload. Want me to:
-A. *Generate a commit message* for you?
-B. *Write a LinkedIn post* showcasing this analysis?
-C. *Move to another lab* (e.g., `dns_tunnel.pcapng`)?
