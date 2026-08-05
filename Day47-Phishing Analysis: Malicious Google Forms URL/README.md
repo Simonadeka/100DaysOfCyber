@@ -1,36 +1,18 @@
-Here's the full GitHub repo structure + files for your phishing analysis:
 
-```
-phishing-analysis-google-forms-2026-08-05/
-├── README.md
-├── reports/
-│ └── incident_report_2026-08-05.md
-├── iocs/
-│ └── iocs.txt
-├── screenshots/
-│ ├── 1_vt_url_input.png
-│ ├── 2_redirection_chain.png
-│ ├── 3_cookies_tab.png
-│ ├── 4_vt_detection.png
-│ ├── 5_http_response.png
-│ ├── 6_js_global_vars.png
-│ └── 7_network_requests.png
-└── detections/
-    └── sigma_google_forms_phishing.yml
-```
-
-### 1. README.md
-```
 # Phishing Analysis: Malicious Google Forms URL - 2026-08-05
 
 ## Overview
 This repository documents the analysis of a phishing campaign using a Google Forms short URL to harvest credentials. The campaign was automatically detected and contained by Google within minutes, returning a `403 Forbidden` "Terms of Service Violation" error.
+
+![1_vt_url_input](screenshots/1_vt_url_input.png)
+*Screenshot 1: VirusTotal URL input page showing the phishing link `forms.gle/kdjqyaKC9UG6tkYu6`.*
 
 ## IOCs
 - **Short URL**: `https://forms.gle/kdjqyaKC9UG6tkYu6`
 - **Final URL**: `https://docs.google.com/forms/d/e/1FAIpQLSd8ILZvEeC3LjkS909-jI2mDZAcccmNvkoXZTBP4xKZdYHQ/viewform`
 - **Serving IP**: `192.178.155.102`
 - **Form ID**: `1FAIpQLSd8ILZvEeC3LjkS909-jI2mDZAcccmNvkoXZTBP4xKZdYHQ`
+- **VT Detection**: 1/92 ![4_vt_detection](screenshots/4_vt_detection.png)
 
 ## Analysis Summary
 - **Redirection**: `forms.gle` → Google Forms (now 403)
@@ -50,10 +32,26 @@ See `/reports/incident_report_2026-08-05.md` for full details.
 A phishing URL `https://forms.gle/kdjqyaKC9UG6tkYu6` was submitted to VirusTotal. The link redirected to a fake Google Form designed to harvest credentials. Google detected the abuse and returned a **403 TOS violation**, wiping the form data.
 
 ### Technical Analysis
-- **Redirection**: `forms.gle` → Google Forms (now 403)
-- **HTTP Response**: 403 TOS Violation
-- **JavaScript**: No malicious variables, form data wiped
-- **Network**: Only Google domains contacted
+#### Redirection Chain
+1. `forms.gle/kdjqyaKC9UG6tkYu6` → Google Forms → 403
+![2_redirection_chain](screenshots/2_redirection_chain.png)
+
+#### HTTP Response
+- Status: 403 Forbidden
+- Reason: TOS Violation
+![5_http_response](screenshots/5_http_response.png)
+
+#### JavaScript Analysis
+- Only Chrome objects found
+![6_js_global_vars](screenshots/6_js_global_vars.png)
+
+#### Cookies
+- `COMPASS` cookie (1-hour expiry)
+![3_cookies_tab](screenshots/3_cookies_tab.png)
+
+#### Network Requests
+- Clean Google traffic only
+![7_network_requests](screenshots/7_network_requests.png)
 
 ### IOCs
 See `/iocs/iocs.txt`
@@ -100,14 +98,4 @@ tags:
     - attack.phishing
     - attack.t1566.002
 ```
-
-### 5. Screenshots Folder
-Place your 7 screenshots in this folder with names matching the README:
-- `1_vt_url_input.png`
-- `2_redirection_chain.png`
-- `3_cookies_tab.png`
-- `4_vt_detection.png`
-- `5_http_response.png`
-- `6_js_global_vars.png`
-- `7_network_requests.png`
 
